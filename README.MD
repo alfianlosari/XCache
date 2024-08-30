@@ -48,7 +48,7 @@ You can also set expiration timestamp when setting the value of a key using the 
 
 ```swift
 // Set expiration timestamp to 10 minutes from now
-cache.setValue(articles, forKey: urlString, expiredTimestamp:                 Calendar.current.date(byAdding: .minute, value: 10, to: .now))
+cache.setValue(articles, forKey: urlString, expiredTimestamp: Calendar.current.date(byAdding:.minute, value: 10, to: .now))
 ```
 
 To invalidate all the values in cache, you can simply invoke
