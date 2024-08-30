@@ -70,7 +70,7 @@ let cache: NetworkCache<PostResponse> = .init()
 let postResponse = try await cache.value(from: URLRequest(url: postsURL))
 ```
 
-To set the expiration timestamp, you can invoke `setExpirationTimestampHandlerIfNeeded`. Its a closure with parameter containing the fetched response and return type of optional Date. This is useful if the expiration value is dynamic from the server side as you can retrieve it from the response`
+To set the expiration timestamp, you can invoke `set(expiredTimestampProvider:)`. Its a closure with parameter containing the fetched response and return type of optional Date. This is useful if the expiration value is dynamic from the server side as you can retrieve it from the response`
 
 ```swift
 // Run this in async context
