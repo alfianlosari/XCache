@@ -59,7 +59,7 @@ cache.removeAllValues()
 
 ### Network Request Cache
 
-You can use `NetworkCache` to store network request as a cache. It uses Swift `actor` type to handle multithreaded access sequentially. When resource for the given URL is being fetched for the first time, it stores the progress using Swift Task and store the final value in the cache. When a another thread access while its still fetching, it will get the ongoing fetching task from the cache to avoid multiple network requests for the same URL. 
+You can use `NetworkCache` to store network request as a cache. It uses Swift `actor` type to handle multithreaded access sequentially. When resource for the given URL is being fetched for the first time, it stores the progress using Swift Task and store the final value in the cache. When a another thread access while it's still fetching, it will retrieve the ongoing fetching task from the cache to avoid multiple network requests for the same URL. 
 
 ```swift
 
@@ -70,7 +70,7 @@ let cache: NetworkCache<PostResponse> = .init()
 let postResponse = try await cache.value(from: URLRequest(url: postsURL))
 ```
 
-To set the expiration timestamp, you can invoke `set(expiredTimestampProvider:)`. Its a closure with parameter containing the fetched response and return type of optional Date. This is useful if the expiration value is dynamic from the server side as you can retrieve it from the response`
+To set the expiration timestamp, you can invoke `set(expiredTimestampProvider:)`. It's a closure with parameter containing the fetched response and return type of optional Date. This is useful if the expiration value is dynamic from the server side as you can retrieve it from the response
 
 ```swift
 // Run this in async context
