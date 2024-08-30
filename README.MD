@@ -1,4 +1,4 @@
-# XCache Swift Network Request Cache
+# XCache Swift Generic & Network Request Cache
 
 ![Alt text](https://i.imghippo.com/files/56Clq1725020693.png "image")
 
